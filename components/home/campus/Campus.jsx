@@ -1,25 +1,9 @@
 "use client";
 
-import {
-  BarChart3,
-  Calendar,
-  Layers,
-  Send,
-  ShieldCheck,
-  TreePine,
-  Video,
-} from "lucide-react";
+import { Calendar, Send, ShieldCheck, Video } from "lucide-react";
 import { useState } from "react";
-import CampusHero from "./CampusHero";
+import CommonHero from "../CommonHero";
 import FacilitySection from "./FacilitySection";
-
-/** Stats shown in the strip above the footer */
-const STATS = [
-  { value: "15+", label: "ACRE CAMPUS", Icon: TreePine },
-  { value: "40+", label: "MODERN LABS", Icon: Layers },
-  { value: "5", label: "SPORTS FIELDS", Icon: BarChart3 },
-  { value: "100%", label: "SECURE FACILITY", Icon: ShieldCheck },
-];
 
 function VisitSection() {
   // Controlled form state
@@ -142,7 +126,12 @@ function VisitSection() {
 export default function Campus() {
   return (
     <div className="min-h-screen bg-[#F9F7F7] font-sans antialiased text-[#112D4E]">
-      <CampusHero />
+      <CommonHero
+        title="CAMPUS TOUR"
+        subtitle=" Explore Our Campus"
+        description="Take a virtual journey through our world-class facilities designed to
+          foster academic excellence, creativity, and physical well-being."
+      />
       <FacilitySection />
       <VisitSection />
     </div>

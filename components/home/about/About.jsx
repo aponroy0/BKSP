@@ -2,55 +2,11 @@
 // About Page — B.K.S.B High School
 // ============================================================
 
-import {
-  ArrowRight,
-  BookOpen,
-  FlaskConical,
-  HeartPulse,
-  Lightbulb,
-  Mail,
-  Mic2,
-  Monitor,
-  Phone,
-  Target,
-  Trophy,
-} from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import Image from "next/image";
-import Footer from "../Footer";
-import Navbar from "../navbar/NavBar";
-import TopBar from "../TopBar";
-
-// ============================================================
-// Section 1 — Hero Banner
-// ============================================================
-function HeroBanner() {
-  return (
-    <header className="relative w-full h-[300px] md:h-[400px] overflow-hidden flex items-center justify-center">
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjdZ2n7rTBQwxGyxq-a9Wf3-nyflMFshJ8uWNqjNUdYXW-bOT7WzXbXfnnuhDam8-hg_2B-9_6s7ImbyTtYnivJYF6AjScewUKZBctkj5380t9LzL4OkBf_b893S0y3pzS8PQLYAQpo2yNMZQP4HyFG3EOt7pkPg3FugPSieVqWJAgsJzo7LmQzT7IRxkkfoDAf0z9ALD0ExgrRZx2GxB4W-Fa9TuU0rtWMbaXYQISBV83mFtKu10TdcEn5iW1losKgMCMMctH1YYX"
-          alt="BKSB School Building"
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-[#112D4E]/80" />
-      </div>
-
-      <div className="relative z-10 text-center px-4 sm:px-6">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-          About B.K.S.B High School
-        </h1>
-        <div className="w-20 sm:w-24 h-1 bg-[#3F72AF] mx-auto rounded-full mb-4 sm:mb-6" />
-        <p className="text-base sm:text-lg text-gray-200 max-w-2xl mx-auto leading-relaxed">
-          A legacy of excellence in education since 2002, fostering holistic
-          development and shaping future leaders in Kastashinga.
-        </p>
-      </div>
-    </header>
-  );
-}
+import CommonHero from "../CommonHero";
+import Facilities from "./Facilities";
+import MissionVission from "./MissionVission";
 
 // ============================================================
 // Section 2 — Our History
@@ -109,54 +65,6 @@ function OurHistory() {
               </p>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// ============================================================
-// Section 3 — Mission & Vision
-// ============================================================
-function MissionVision() {
-  const cards = [
-    {
-      Icon: Target,
-      title: "Our Mission",
-      text: "To provide a dynamic learning environment that encourages critical thinking, creativity, and ethical behavior. We aim to empower students to achieve their full potential, equipping them with the skills and values necessary to contribute positively to society and succeed in a rapidly changing world.",
-    },
-    {
-      Icon: Lightbulb,
-      title: "Our Vision",
-      text: "To be a center of excellence in education, recognized for nurturing well-rounded individuals who are academically proficient, socially responsible, and morally upright. We envision a future where every student becomes a beacon of knowledge and integrity.",
-    },
-  ];
-
-  return (
-    <section className="py-16 sm:py-20 bg-[#F9F7F7]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-          {cards.map(({ Icon, title, text }) => (
-            <div
-              key={title}
-              className="bg-[#112D4E] text-white p-8 sm:p-10 rounded-lg shadow-xl relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300"
-            >
-              <div className="absolute top-0 right-0 p-6 sm:p-8 opacity-10 group-hover:opacity-20 transition-opacity pointer-events-none">
-                <Icon size={80} strokeWidth={1} className="text-white" />
-              </div>
-              <div className="relative z-10">
-                <div className="inline-flex p-3 bg-white/10 rounded-full mb-5 sm:mb-6 text-[#3F72AF]">
-                  <Icon size={28} strokeWidth={1.75} />
-                </div>
-                <h3 className=" text-2xl sm:text-3xl font-bold mb-4">
-                  {title}
-                </h3>
-                <p className="text-gray-300 leading-relaxed text-sm sm:text-base lg:text-lg">
-                  {text}
-                </p>
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>
@@ -257,101 +165,6 @@ function Leadership() {
 }
 
 // ============================================================
-// Section 5 — Campus Facilities
-// ============================================================
-function FacilityCard({ Icon, title, description }) {
-  return (
-    <div className="bg-white rounded-lg p-5 sm:p-6 shadow-sm border border-[#DBE2EF] hover:shadow-lg hover:border-[#3F72AF] transition duration-300 group">
-      <div className="flex items-center mb-4">
-        <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#F9F7F7] flex items-center justify-center text-[#3F72AF] group-hover:bg-[#3F72AF] group-hover:text-white transition-colors flex-shrink-0">
-          <Icon size={22} strokeWidth={1.75} />
-        </div>
-        <h3 className="ml-3 sm:ml-4 font-bold text-base sm:text-xl text-[#112D4E] leading-snug">
-          {title}
-        </h3>
-      </div>
-      <p className="text-gray-600 text-sm leading-relaxed mb-4">
-        {description}
-      </p>
-      <a
-        href="#"
-        className="text-[#3F72AF] text-sm font-bold flex items-center gap-1 group-hover:underline"
-      >
-        View Gallery
-        <ArrowRight
-          size={14}
-          strokeWidth={2.5}
-          className="group-hover:translate-x-1 transition-transform"
-        />
-      </a>
-    </div>
-  );
-}
-
-function Facilities() {
-  const facilities = [
-    {
-      Icon: FlaskConical,
-      title: "Science Laboratories",
-      description:
-        "Modern labs for Physics, Chemistry, and Biology equipped with the latest apparatus for practical learning.",
-    },
-    {
-      Icon: BookOpen,
-      title: "Central Library",
-      description:
-        "A vast collection of over 5,000 books, journals, and digital resources to fuel curiosity and research.",
-    },
-    {
-      Icon: Monitor,
-      title: "Computer Lab",
-      description:
-        "High-speed internet enabled workstations offering students hands-on experience with modern technology.",
-    },
-    {
-      Icon: Trophy,
-      title: "Sports Complex",
-      description:
-        "Expansive playground for football and cricket, plus courts for volleyball and badminton.",
-    },
-    {
-      Icon: Mic2,
-      title: "Auditorium",
-      description:
-        "A spacious multipurpose hall for cultural events, seminars, and school assemblies.",
-    },
-    {
-      Icon: HeartPulse,
-      title: "Medical Room",
-      description:
-        "First-aid center with trained staff to attend to immediate health needs of students.",
-    },
-  ];
-
-  return (
-    <section className="py-16 sm:py-20 bg-[#F9F7F7] border-t border-[#DBE2EF]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-10 sm:mb-12 gap-4">
-          <div>
-            <span className="text-[#3F72AF] font-bold tracking-wider uppercase text-xs sm:text-sm">
-              Infrastructure
-            </span>
-            <h2 className=" text-2xl sm:text-3xl md:text-4xl font-bold mt-2 text-[#112D4E]">
-              Campus Facilities
-            </h2>
-          </div>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-          {facilities.map((f) => (
-            <FacilityCard key={f.title} {...f} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// ============================================================
 // Section 6 — Join Our Community CTA
 // ============================================================
 function JoinCTA() {
@@ -382,15 +195,16 @@ function JoinCTA() {
 export default function About() {
   return (
     <main>
-      <TopBar />
-      <Navbar />
-      <HeroBanner />
+      <CommonHero
+        title="About B.K.S.B High School"
+        subtitle="Building Leaders for Tomorrow"
+        description="Since 2002, B.K.S.B High School has been committed to academic excellence and character development, empowering students in Kastashinga to achieve their full potential."
+      />
       <OurHistory />
-      <MissionVision />
+      <MissionVission />
       <Leadership />
       <Facilities />
       <JoinCTA />
-      <Footer />
     </main>
   );
 }

@@ -57,7 +57,7 @@ function StepsSection() {
               </div>
               {/* Vertical connector — skip after last step */}
               {i < STEPS.length - 1 && (
-                <div className="w-px flex-1 bg-gray-200 my-3 min-h-[40px]" />
+                <div className="w-px flex-1 bg-gray-200 my-3 min-h-10" />
               )}
             </div>
 
