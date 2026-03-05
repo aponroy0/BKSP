@@ -6,7 +6,8 @@ import HeadmasterMessage from "./HeadmasterMessage";
 import HeroSection from "./HeroSection";
 
 import NewsSection from "./NewSection";
-import NoticeBoard from "./NoticeBoard";
+import NoticeBoard from "./notice/NoticeBoard";
+
 import StatsBar from "./StatsBar";
 import WhyBKSB from "./WhyBKSB";
 

@@ -1,14 +1,5 @@
-// HeroSection.jsx
-// Full-width hero banner with background image, overlay gradient,
-// headline text, and two CTA buttons.
-//
-// Layout strategy to prevent StatsBar overlap:
-// - Content is top-aligned (items-start) with generous padding-top on all sizes.
-// - A fixed bottom padding (pb-28 on md+) ensures the buttons always sit well
-//   above the hero's bottom edge where the StatsBar overlaps.
-// - The hero height is tall enough that the background image still looks great.
-
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -54,12 +45,12 @@ export default function HeroSection() {
           {/* CTA buttons: stack on mobile, side-by-side on sm+ */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start">
             {/* Primary CTA — Apply Now */}
-            <a
-              href="#"
+            <Link
+              href="/apply/form"
               className="bg-[#3F72AF] hover:bg-white hover:text-[#112D4E] text-white text-center px-6 sm:px-10 py-3 sm:py-4 md:py-5 rounded-lg font-bold text-base sm:text-lg md:text-xl shadow-xl shadow-blue-900/40 transition transform hover:-translate-y-1"
             >
               Apply Now
-            </a>
+            </Link>
           </div>
         </div>
       </div>

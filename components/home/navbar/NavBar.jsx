@@ -69,14 +69,14 @@ export default function Navbar() {
           {/* ── Desktop: Guardian Login + Login ── */}
           <div className="hidden lg:flex items-center space-x-3">
             <a
-              href="/edumanager/guardian/login"
+              href={`${process.env.NEXT_PUBLIC_GUARDIAN_LOGIN_URL}`}
               className="flex items-center gap-2 border border-gray-300 hover:border-[#3F72AF] hover:text-[#3F72AF] text-[#112D4E] font-medium text-sm px-4 py-2 rounded-full transition"
             >
               <UserRound size={15} strokeWidth={2} />
               Guardian
             </a>
             <a
-              href="/edumanager/login"
+              href={`${process.env.NEXT_PUBLIC_USER_LOGIN_URL}`}
               className="flex items-center gap-2 bg-[#3F72AF] hover:bg-[#112D4E] text-white font-medium text-sm px-4 py-2 rounded-full shadow-md shadow-blue-500/20 transition"
             >
               <Lock size={14} strokeWidth={2.5} />

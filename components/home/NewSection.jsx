@@ -1,24 +1,17 @@
-// NewsSection.jsx
-// "News & Updates" section.
-// Mobile: single column — news cards stacked, then sidebar below.
-// lg+: 2/3 news column + 1/3 sidebar side by side.
-//
-// Icons replaced with Lucide React SVG components throughout —
-// sidebar heading, quick links, and the Apply CTA card.
-
+"use client";
 import {
-  CalendarCheck, // Alumni Records
-  CalendarDays, // Non-academic Programs
-  CreditCard, // All Events
-  GraduationCap, // Financial Aid
-  HeartHandshake, // "Important Links" heading icon
+  CalendarCheck,
+  CalendarDays,
+  CreditCard,
+  GraduationCap,
+  HeartHandshake,
   History,
-  Link, // Academic Programs
-  Palette, // Tuition and Fees
-  PiggyBank, // Financial Aid
+  Link as LinkIcon,
+  Palette,
+  PiggyBank,
 } from "lucide-react";
 import Image from "next/image";
-
+import Link from "next/link";
 // ── Quick links data with Lucide icon components ──────────────
 const quickLinks = [
   { Icon: History, label: "Alumni Records" },
@@ -110,7 +103,7 @@ export default function NewsSection() {
             <div className="bg-[#F9F7F7] p-5 sm:p-6 rounded-lg border border-[#DBE2EF]">
               {/* Panel heading with Link icon */}
               <h3 className="font-serif text-lg sm:text-xl font-bold text-[#112D4E] mb-4 flex items-center gap-2">
-                <Link
+                <LinkIcon
                   size={20}
                   className="text-[#3F72AF] shrink-0"
                   strokeWidth={2}
@@ -150,15 +143,18 @@ export default function NewsSection() {
                 />
               </div>
 
-              <h3 className="font-bold text-lg sm:text-xl mb-2">
+              <h1 className="font-bold text-lg sm:text-xl mb-2">
                 Apply to BKSB
-              </h3>
+              </h1>
               <p className="text-sm opacity-90 mb-4">
                 Admissions are open for the upcoming academic session.
               </p>
-              <button className="bg-white text-[#112D4E] font-bold px-6 py-2 rounded-full hover:bg-[#DBE2EF] transition w-full text-sm sm:text-base">
+              <Link
+                href="/apply/form"
+                className="bg-white text-[#112D4E] font-bold px-6 py-2 rounded-full hover:bg-[#DBE2EF] transition w-full text-sm sm:text-base"
+              >
                 Start Application
-              </button>
+              </Link>
             </div>
           </div>
         </div>

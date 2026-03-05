@@ -7,6 +7,7 @@ import {
   Upload,
   UserPlus,
 } from "lucide-react";
+import Link from "next/link";
 import ApplyHero from "./ApplyHero";
 
 const STEPS = [
@@ -119,12 +120,12 @@ function ChecklistSection() {
                 Applications for the upcoming session are now open. Start your
                 application today and shape a bright future.
               </p>
-              <a
-                href="#"
+              <Link
+                href="/apply/form"
                 className="block w-full bg-[#3F72AF] hover:bg-[#2f5a8e] text-white font-bold py-3.5 rounded-xl shadow-lg transition text-sm mb-3"
               >
                 Start Application Now
-              </a>
+              </Link>
               <p className="text-gray-400 text-xs">
                 Takes approximately 15 minutes to complete.
               </p>
