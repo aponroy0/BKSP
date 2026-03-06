@@ -1,4 +1,4 @@
-import Alumni from "@/components/home/alumni/Alumni.jsx";
+import Alumni from "@/components/home/alumni/Alumni";
 
 export default function page() {
   return (
