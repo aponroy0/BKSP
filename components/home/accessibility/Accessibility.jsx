@@ -155,7 +155,7 @@ function PhysicalCampus() {
                 <li key={item.title} className="flex items-start gap-3">
                   <CheckCircle2
                     size={18}
-                    className="text-[#3F72AF] flex-shrink-0 mt-0.5"
+                    className="text-[#3F72AF] shrink-0 mt-0.5"
                     strokeWidth={2}
                   />
                   <div>
@@ -262,7 +262,7 @@ function LearningSupport() {
                 >
                   <Icon
                     size={18}
-                    className="text-[#DBE2EF] flex-shrink-0"
+                    className="text-[#DBE2EF] shrink-0"
                     strokeWidth={1.75}
                   />
                   <span className="text-white text-xs sm:text-sm font-medium">
