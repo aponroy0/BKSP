@@ -5,7 +5,6 @@ export default function SectionHeader({ icon: Icon, title }) {
         <Icon size={18} strokeWidth={1.75} />
         <span className="font-semibold text-base">{title}</span>
       </div>
-      <span className="text-xs text-blue-200">* Required Fields</span>
     </div>
   );
 }

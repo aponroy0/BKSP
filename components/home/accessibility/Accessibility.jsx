@@ -119,7 +119,7 @@ function SectionHeader({ label, title, subtitle, center = true }) {
           {label}
         </span>
       )}
-      <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-[#112D4E]">
+      <h2 className=" text-2xl sm:text-3xl md:text-4xl font-bold text-[#112D4E]">
         {title}
       </h2>
       {subtitle && (
@@ -139,7 +139,7 @@ function PhysicalCampus() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           {/* Left: heading, paragraph, checklist */}
           <div>
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#112D4E] mb-4">
+            <h2 className=" text-2xl sm:text-3xl font-bold text-[#112D4E] mb-4">
               Physical Campus Features
             </h2>
             <p className="text-gray-500 text-sm sm:text-base leading-relaxed mb-7">
@@ -245,7 +245,7 @@ function LearningSupport() {
 
           {/* Right navy panel with text and 2×2 grid */}
           <div className="md:col-span-3 bg-[#112D4E] p-8 sm:p-10">
-            <h2 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3">
+            <h2 className=" text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3">
               Specialized Learning Support
             </h2>
             <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6">

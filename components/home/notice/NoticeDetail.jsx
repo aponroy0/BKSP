@@ -130,7 +130,7 @@ export default function NoticeDetail() {
       </div>
 
       {/* Main content */}
-      <main className="max-w-4xl mx-auto w-full px-4 sm:px-6 pb-10 flex-1">
+      <main className="max-w-7xl mx-auto w-full px-4 sm:px-6 pb-10 flex-1">
         {loading ? (
           //   <p className="text-gray-500 text-center py-10">Loading...</p>
           <LoaderCircle

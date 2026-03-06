@@ -1,6 +1,5 @@
 import AboutSection from "./AboutSection";
 import ActivitiesSection from "./ActivitiesSection ";
-import EventsNewsletter from "./EventsNewsletter";
 import GallerySection from "./GallerySection";
 import HeadmasterMessage from "./HeadmasterMessage";
 import HeroSection from "./HeroSection";
@@ -23,7 +22,6 @@ export default function Home() {
       <NewsSection />
       <GallerySection />
       <WhyBKSB />
-      <EventsNewsletter />
     </>
   );
 }
