@@ -2,11 +2,11 @@ import CommonHero from "../CommonHero";
 import AlumniSection from "./AlumniSection";
 import EventSection from "./EventSection";
 
-async function subscribeAction(formData) {
-  "use server";
-  const email = formData.get("email");
-  console.log("Newsletter subscription:", email);
-}
+// async function subscribeAction(formData) {
+
+//   const email = formData.get("email");
+//   console.log("Newsletter subscription:", email);
+// }
 
 export default function Alumni() {
   return (
