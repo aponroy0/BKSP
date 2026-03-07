@@ -2,48 +2,49 @@
 import { LoaderCircle } from "lucide-react";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import Breadcrumb from "../events/Breadcrumb";
-import NoticeDetailCard from "./NoticeDetailCard";
+import Breadcrumb from "./Breadcrumb";
+import DetailCard from "./DetailCard";
 
 // Page Component
-export default function NoticeDetail() {
-  const [noticeDetail, setNoticeDetail] = useState(null);
+
+export default function EventDetail() {
+  const [eventDetail, setEventDetail] = useState(null);
   const [err, setErr] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const { title } = useParams();
+  const { events } = useParams();
 
   useEffect(() => {
-    async function fetchNoticeDetail() {
+    async function fetchEventDetail() {
       try {
         setLoading(true);
-        const response = await fetch(`/api/notices`); // Absolute path
-        if (!response.ok) throw new Error("Failed to fetch notices");
+        const response = await fetch(`/api/events`); // Absolute path
+        if (!response.ok) throw new Error("Failed to fetch events");
 
         const data = await response.json();
-        const matchedNotice = data.data.find((n) => n.title === title);
+        const matchedEvent = data.data.find((n) => n.title === events);
 
-        if (matchedNotice) {
-          setNoticeDetail(matchedNotice);
+        if (matchedEvent) {
+          setEventDetail(matchedEvent);
           setErr(null);
         } else {
-          setErr(`Notice not found for title: ${title}`);
+          setErr(`Event not found for title: ${events}`);
         }
       } catch (error) {
-        setErr(`Error fetching notice detail: ${error.message}`);
+        setErr(`Error fetching event detail: ${error.message}`);
       } finally {
         setLoading(false);
       }
     }
 
-    fetchNoticeDetail();
-  }, [title]);
+    fetchEventDetail();
+  }, [events]);
 
   return (
     <div className="bg-[#F9F7F7] min-h-screen flex flex-col">
       {/* Breadcrumb */}
       <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 pt-5 pb-3">
-        <Breadcrumb path={title} />
+        <Breadcrumb path={events} />
       </div>
 
       {/* Main content */}
@@ -57,7 +58,7 @@ export default function NoticeDetail() {
         ) : err ? (
           <p className="text-red-500 text-center py-10">{err}</p>
         ) : (
-          <NoticeDetailCard notice={noticeDetail} />
+          <DetailCard event={eventDetail} />
         )}
       </main>
     </div>

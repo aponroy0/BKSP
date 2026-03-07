@@ -58,7 +58,7 @@ export default function GallerySection() {
     <section className="py-12 sm:py-16 md:py-20 bg-[#F9F7F7]">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-8 md:mb-12">
-          <h2 className="serif text-2xl sm:text-3xl md:text-4xl font-bold text-[#112D4E]">
+          <h2 className=" text-2xl sm:text-3xl md:text-4xl font-bold text-[#112D4E]">
             Photo Gallery
           </h2>
           <p className="text-gray-600 mt-2 text-sm sm:text-base">

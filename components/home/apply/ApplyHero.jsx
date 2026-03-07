@@ -15,7 +15,7 @@ export default function ApplyHero() {
         <span className="inline-block mb-5 px-4 py-1 rounded border border-white/30 text-white/80 text-[10px] font-bold tracking-widest bg-white/5 uppercase">
           Admissions 2024–25
         </span>
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-5 font-serif leading-tight">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-5  leading-tight">
           How to Apply
         </h1>
         <p className="text-blue-200 text-base md:text-lg max-w-xl mx-auto leading-relaxed">

@@ -38,7 +38,7 @@ export default function Navbar() {
               className="object-contain group-hover:scale-105 transition-transform"
             />
             <div className="flex flex-col">
-              <span className="font-serif font-bold text-xl leading-none text-[#112D4E]">
+              <span className=" font-bold text-xl leading-none text-[#112D4E]">
                 B.K.S.B
               </span>
               <span className="text-xs uppercase tracking-wider text-gray-500">

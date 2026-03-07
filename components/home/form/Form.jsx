@@ -1,22 +1,15 @@
 "use client";
 
-import { getAcademicYear, getAdmissionHeading } from "@/utils/addmission";
-import {
-  ArrowRight,
-  Camera,
-  FileText,
-  Upload,
-  User,
-  Users,
-  X,
-} from "lucide-react";
+import { getAdmissionHeading } from "@/utils/addmission";
+import { ArrowRight, FileText, Upload, User, Users } from "lucide-react";
+
 import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import FieldError from "./FieldError";
 import FieldLabel from "./FieldLabel";
+import PhotoBox from "./PhotoBox";
 import SectionHeader from "./SectionHeader";
 
-const ACADEMIC_YEAR = getAcademicYear();
 const ADMISSION_HEADING = getAdmissionHeading();
 const inputBase =
   "w-full border border-gray-200 rounded-lg px-3.5 py-2.5 text-sm text-gray-700 placeholder-gray-400 bg-white focus:outline-none focus:ring-2 focus:ring-[#3F72AF]/30 focus:border-[#3F72AF] transition";
@@ -32,11 +25,20 @@ export default function Form() {
   const [photoPreview, setPhotoPreview] = useState(null);
   const [birthCertName, setBirthCertName] = useState("");
   const [tcName, setTcName] = useState("");
+  const [photoErr, setPhotoErr] = useState("");
   const photoRef = useRef(null);
   const birthCertRef = useRef(null);
   const tcRef = useRef(null);
 
   const onSubmit = async (data) => {
+    // Photo Upload check
+    if (!photoRef.current.files[0]) {
+      setPhotoErr("Student photo is required");
+      return;
+    } else {
+      setPhotoErr("");
+    }
+
     try {
       const formData = new FormData();
       Object.keys(data).forEach((key) => {
@@ -46,10 +48,12 @@ export default function Form() {
       });
       if (photoRef.current?.files[0])
         formData.append("photo", photoRef.current.files[0]);
+
       if (birthCertRef.current?.files[0])
         formData.append("birthCert", birthCertRef.current.files[0]);
       if (tcRef.current?.files[0])
         formData.append("transferCert", tcRef.current.files[0]);
+      console.log(formData);
 
       const response = await fetch("/api/applications", {
         method: "POST",
@@ -70,7 +74,6 @@ export default function Form() {
       birthCertRef.current.value = "";
       tcRef.current.value = "";
     } catch (error) {
-      console.error("Submission error:", error);
       alert(`Error: ${error.message}`);
     }
   };
@@ -78,6 +81,7 @@ export default function Form() {
   const handlePhotoChange = (e) => {
     const file = e.target.files[0];
     if (file) setPhotoPreview(URL.createObjectURL(file));
+    setPhotoErr("");
   };
 
   const removePhoto = (e) => {
@@ -104,9 +108,7 @@ export default function Form() {
       <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 pb-16">
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
           <div className="flex flex-col gap-5 mb-5">
-            {/* ══════════════════════════════════════
-                Card 1 — Student Information
-            ══════════════════════════════════════ */}
+            {/*Student Information */}
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
               <SectionHeader icon={User} title="Student Information" />
 
@@ -118,6 +120,7 @@ export default function Form() {
                     photoRef={photoRef}
                     removePhoto={removePhoto}
                     handlePhotoChange={handlePhotoChange}
+                    error={photoErr}
                   />
                 </div>
 
@@ -202,9 +205,8 @@ export default function Form() {
                         <FieldLabel label="Academic Year" required />
                         <input
                           type="text"
-                          readOnly
-                          value={ACADEMIC_YEAR}
-                          className={`${inputBase} bg-gray-50 cursor-not-allowed text-gray-500`}
+                          placeholder="Enter student's academic year"
+                          className={`${inputBase} bg-gray-50  text-gray-500`}
                           {...register("academicYear")}
                         />
                       </div>
@@ -265,13 +267,10 @@ export default function Form() {
                       <div>
                         <FieldLabel label="Emergency Contact No" required />
                         <div className="flex">
-                          <span className="inline-flex items-center px-3 border border-r-0 border-gray-200 bg-gray-50 rounded-l-lg text-sm text-gray-600 font-medium shrink-0">
-                            +880
-                          </span>
                           <input
-                            type="tel"
+                            type="text"
                             placeholder="1XXX-XXXXXX"
-                            className={`${inputBase} rounded-l-none`}
+                            className={`${inputBase} `}
                             {...register("emergencyContact", {
                               required: "Contact number is required",
                               pattern: {
@@ -367,7 +366,6 @@ export default function Form() {
                       </div>
                     </div>
                   </div>
-                  {/* END LEFT col */}
 
                   {/* RIGHT — photo box, desktop only */}
                   <div className="hidden sm:flex flex-col items-center shrink-0">
@@ -376,15 +374,14 @@ export default function Form() {
                       photoRef={photoRef}
                       removePhoto={removePhoto}
                       handlePhotoChange={handlePhotoChange}
+                      error={photoErr}
                     />
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* ══════════════════════════════════════
-                Card 2 — Guardian Details
-            ══════════════════════════════════════ */}
+            {/* Guardian Details */}
             <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
               <div className="flex items-center gap-2.5 px-4 sm:px-6 py-4 sm:py-5 border-b border-gray-100">
                 <Users
@@ -429,13 +426,10 @@ export default function Form() {
                   <div>
                     <FieldLabel label="Primary Contact Mobile" required />
                     <div className="flex">
-                      <span className="inline-flex items-center px-3 border border-r-0 border-gray-200 bg-gray-50 rounded-l-lg text-sm text-gray-600 font-medium shrink-0">
-                        +880
-                      </span>
                       <input
-                        type="tel"
+                        type="text"
                         placeholder="1XXX-XXXXXX"
-                        className={`${inputBase} rounded-l-none`}
+                        className={`${inputBase} rounded`}
                         {...register("guardianMobile", {
                           required: "Mobile number is required",
                           pattern: {
@@ -449,32 +443,12 @@ export default function Form() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 pt-1">
-                  <input
-                    type="checkbox"
-                    id="declaration"
-                    className="mt-0.5 w-4 h-4 accent-[#3F72AF] cursor-pointer shrink-0"
-                    {...register("declaration", {
-                      required: "You must accept the declaration",
-                    })}
-                  />
-                  <label
-                    htmlFor="declaration"
-                    className="text-sm text-gray-500 cursor-pointer leading-relaxed"
-                  >
-                    I hereby declare that all information provided above is true
-                    and accurate to the best of my knowledge.
-                  </label>
-                </div>
                 <FieldError message={errors.declaration?.message} />
               </div>
             </div>
           </div>
-          {/* END cards */}
 
-          {/* ══════════════════════════════════════
-              Form Footer
-          ══════════════════════════════════════ */}
+          {/*Form Footer*/}
           <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
             <div className="flex flex-col sm:flex-row items-center justify-between px-4 sm:px-6 py-4 sm:py-5 gap-4">
               <p className="text-sm text-gray-400 text-center sm:text-left">
@@ -510,64 +484,5 @@ export default function Form() {
         </form>
       </div>
     </main>
-  );
-}
-
-// ══════════════════════════════════════════════
-// Reusable Photo Box component
-// ══════════════════════════════════════════════
-function PhotoBox({ photoPreview, photoRef, removePhoto, handlePhotoChange }) {
-  return (
-    <div className="flex flex-col items-center">
-      <FieldLabel label="Student Photo" />
-      <div className="relative">
-        <div
-          onClick={() => photoRef.current?.click()}
-          className={`w-28 h-32 rounded-lg overflow-hidden cursor-pointer transition
-            ${
-              photoPreview
-                ? "border-2 border-[#3F72AF] shadow-md"
-                : "border-2 border-dashed border-gray-300 bg-gray-50 hover:border-[#3F72AF] flex flex-col items-center justify-center"
-            }`}
-        >
-          {photoPreview ? (
-            <img
-              src={photoPreview}
-              alt="Student preview"
-              className="w-full h-full object-cover object-top"
-            />
-          ) : (
-            <>
-              <Camera
-                size={24}
-                className="text-gray-400 mb-1.5"
-                strokeWidth={1.5}
-              />
-              <span className="text-[10px] text-gray-400 text-center leading-tight px-2">
-                Upload 300×300
-                <br />
-                (JPG/PNG)
-              </span>
-            </>
-          )}
-        </div>
-        {photoPreview && (
-          <button
-            type="button"
-            onClick={removePhoto}
-            className="absolute -top-2.5 -right-2.5 w-6 h-6 bg-white border border-gray-300 rounded-full flex items-center justify-center shadow-sm hover:bg-red-50 hover:border-red-400 transition z-10"
-          >
-            <X size={12} className="text-gray-500 hover:text-red-500" />
-          </button>
-        )}
-      </div>
-      <input
-        ref={photoRef}
-        type="file"
-        accept="image/jpeg,image/png"
-        className="hidden"
-        onChange={handlePhotoChange}
-      />
-    </div>
   );
 }

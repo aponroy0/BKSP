@@ -84,7 +84,7 @@ function ChecklistSection() {
         <div className="flex flex-col lg:flex-row gap-10 items-start">
           {/* Left: checklist */}
           <div className="lg:w-1/2">
-            <h2 className="text-3xl font-extrabold font-serif text-[#112D4E] mb-4">
+            <h2 className="text-3xl font-extrabold  text-[#112D4E] mb-4">
               Document Checklist
             </h2>
             <p className="text-gray-500 text-sm leading-relaxed mb-8 max-w-md">
