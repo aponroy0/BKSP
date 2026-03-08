@@ -12,7 +12,7 @@ export default function PhotoBox({
 }) {
   return (
     <div className="flex flex-col items-center">
-      <FieldLabel label="Student Photo" required />
+      <FieldLabel label="studentPhoto" required />
 
       <div className="relative">
         <div

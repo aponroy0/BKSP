@@ -5,7 +5,8 @@
 
 @theme {
   /* Fonts */
-  --font-sans: var(--font-poppins); /* From next/font */
+  --font-sans: var(--font-poppins);
+  --font-bn: var(--font-hind-siliguri);
   --font-serif: "Georgia", serif;
 
   /* Brand Colors */
@@ -28,6 +29,12 @@ body {
   margin: 0;
 }
 
+/* Bangla font — apply to lang="bn" or .font-bn class */
+:lang(bn),
+.font-bn {
+  font-family: var(--font-hind-siliguri), sans-serif;
+}
+
 /* Remove default button styling */
 button {
   @apply cursor-pointer;
@@ -36,22 +43,6 @@ button {
 /* Remove default link underline */
 a {
   @apply no-underline;
-}
-
-/* Material Symbols Icon Font */
-.material-symbols-outlined {
-  font-family: "Material Symbols Outlined";
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-transformation: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
 }
 
 ::-webkit-scrollbar {

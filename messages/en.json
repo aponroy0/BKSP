@@ -1,0 +1,194 @@
+{
+  "nav": {
+    "Academics": "Academics",
+    "Admissions": "Admissions",
+    "Student Life": "Student Life",
+    "About Us": "About Us",
+    "Guardian": "Guardian",
+    "Login": "Login",
+    "Classes": "Classes",
+    "Teachers": "Teachers",
+    "Apply to BKSB": "Apply to BKSB",
+    "Campus Tour": "Campus Tour",
+    "Scholarships": "Scholarships",
+    "Events": "Events",
+    "Alumni": "Alumni",
+    "Accessibility": "Accessibility",
+    "Co-curricular Activities": "Co-curricular Activities"
+  },
+  "hero": {
+    "admissionBadge": "Admissions Open for",
+    "headlineLine1": "Empowering",
+    "headlineLine2": "Future Leaders",
+    "subtitle": "B.K.S.B High School provides a nurturing environment where academic excellence meets character development. Join a legacy of success established in 2002.",
+    "applyNow": "Apply Now"
+  },
+  "stats": {
+    "established": "Established",
+    "students": "Students",
+    "expertTeachers": "Expert Teachers",
+    "passRate": "Pass Rate"
+  },
+  "footer": {
+    "description": "Established in 2002, BKSB High School is committed to providing quality education and fostering moral values in Kastashinga, Jamalpur.",
+    "quickLinks": "Quick Links",
+    "contactUs": "Contact Us",
+    "address": "Kastashinga, Jamalpur, Bangladesh",
+    "col1": {
+      "aboutUs": "About Us",
+      "academics": "Academics",
+      "admissions": "Admissions"
+    },
+    "col2": {
+      "contactUs": "Contact Us",
+      "noticeBoard": "Notice Board",
+      "gallery": "Gallery"
+    },
+    "copyright": "© 2023 B.K.S.B High School. All Rights Reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfUse": "Terms of Use"
+  },
+  "applyForm": {
+    "title": "Application Form",
+    "subtitle": "Admissions for ",
+    "description": "Please fill out the form below carefully to apply for admission.",
+    "studentInfo": "Student Information",
+    "fullName": "Full Name of Student",
+    "fullNamePlaceholder": "Enter student's full name",
+    "fullNameRequired": "Full name is required",
+    "fullNameMin": "At least 3 characters",
+    "gender": "Gender",
+    "selectGender": "Select Gender",
+    "male": "Male",
+    "female": "Female",
+    "other": "Other",
+    "genderRequired": "Gender is required",
+    "dob": "Date of Birth",
+    "dobRequired": "Date of birth is required",
+    "appliedClass": "Applied Class",
+    "selectClass": "Select Class",
+    "classSix": "Class Six",
+    "classSeven": "Class Seven",
+    "classEight": "Class Eight",
+    "classNine": "Class Nine",
+    "classTen": "Class Ten",
+    "classRequired": "Please select a class",
+    "academicYear": "Academic Year",
+    "academicYearPlaceholder": "Enter student's academic year",
+    "religion": "Religion",
+    "religionPlaceholder": "e.g. Islam",
+    "bloodGroup": "Blood Group",
+    "selectBloodGroup": "Select Group",
+    "permanentAddress": "Permanent Address",
+    "addressPlaceholder": "Enter full residential address",
+    "addressRequired": "Address is required",
+    "emergencyContact": "Emergency Contact No",
+    "contactRequired": "Contact number is required",
+    "numbersOnly": "Numbers only",
+    "birthCertificate": "Birth Certificate (PDF/JPG)",
+    "clickToUpload": "Click to upload",
+    "birthCertRequired": "Birth certificate is required",
+    "academicHistory": "Academic History (Optional)",
+    "previousSchool": "Previous School Name",
+    "previousSchoolPlaceholder": "Enter name of previous school",
+    "transferCertificate": "Transfer Certificate",
+    "tcCopy": "TC Copy (Optional)",
+    "studentPhoto": "Student Photo",
+    "photoHint": "Upload 300×300 (JPG/PNG)",
+    "photoRequired": "Student photo is required",
+    "guardianDetails": "Guardian Details",
+    "fatherName": "Father's Full Name",
+    "fatherNamePlaceholder": "Enter father's name",
+    "fatherNameRequired": "Father's name is required",
+    "motherName": "Mother's Full Name",
+    "motherNamePlaceholder": "Enter mother's name",
+    "motherNameRequired": "Mother's name is required",
+    "primaryContact": "Primary Contact Mobile",
+    "mobileRequired": "Mobile number is required",
+    "helpText": "Need help? Contact Admissions at ",
+    "helpPhone": "+880 1914452677",
+    "cancel": "Cancel",
+    "submit": "Submit Application",
+    "submitting": "Submitting…",
+    "submitSuccess": "Application submitted successfully!",
+    "submitFailed": "Failed to submit application"
+  },
+
+  "headmaster": {
+    "badge": "Welcome Message",
+    "heading": "A Foundation for Life",
+    "paragraph1": "Welcome to B.K.S.B High School. We are committed to a standard of excellence that balances academic achievement with moral discipline. We believe that true education involves training the mind and the character in equal measure. Here, we push our students to reach their highest potential while instilling the values that define a life well-lived.",
+    "paragraph2": "Situated in Kastashinga, Jamalpur, we have been serving the community since 2002, consistently delivering outstanding results and shaping the leaders of tomorrow.",
+    "name": "Topon Kumar Dey",
+    "title": "Headmaster, B.K.S.B High School"
+  },
+  "about": {
+    "heading": "A Tradition of Excellence",
+    "paragraph": "B.K.S.B High School is more than just a place of learning; it is a community dedicated to the pursuit of knowledge. Our modern campus features state-of-the-art laboratories, a vast library, and digital classrooms designed to meet the challenges of the 21st century.",
+    "feature1": "Digital Smart Classrooms & Science Labs",
+    "feature2": "Expansive Playground & Sports Facilities",
+    "feature3": "Highly Qualified Faculty Members",
+    "learnMore": "Learn more about our history"
+  },
+
+  "activitiesSection": {
+    "badge": "Beyond Academics",
+    "heading": "Co-curricular Activities",
+    "description": "We nurture talent through a diverse range of clubs and activities designed to build confidence and skills.",
+    "debateClub": "Debate Club",
+    "artsClub": "Arts Club",
+    "musicClass": "Music Class",
+    "arabicClass": "Arabic Class",
+    "activityLearning": "Activity Learning",
+    "selfDefense": "Self-defense Class"
+  },
+  "noticeBoard": {
+    "title": "Notice Board",
+    "viewArchive": "View Archive"
+  },
+  "eventsSection": {
+    "heading": "Events & Updates",
+    "readAll": "Read All",
+    "importantLinks": "Important Links",
+    "links": {
+      "alumniRecords": "Alumni Records",
+      "sportsCalendar": "Sports Calendar",
+      "allEvents": "All Events",
+      "academicPrograms": "Academic Programs",
+      "nonAcademicPrograms": "Non-academic Programs",
+      "tuitionFees": "Tuition and Fees",
+      "financialAid": "Financial Aid"
+    },
+    "cta": {
+      "title": "Apply to BKSB",
+      "description": "Admissions are open for the upcoming academic session.",
+      "button": "Start Application"
+    }
+  },
+  "gallery": {
+    "heading": "Photo Gallery",
+    "subheading": "Glimpses of life at BKSB",
+    "photos": {
+      "sportsDay": "Annual Sports Day",
+      "scienceLab": "Science Lab",
+      "classroomActivities": "Classroom Activities",
+      "graduation": "Graduation Ceremony"
+    }
+  },
+  "whyBKSB": {
+    "heading": "Why BKSB?",
+    "subheading": "Comprehensive support for every student's journey",
+    "scholarships": {
+      "title": "Scholarships",
+      "description": "Merit-based scholarships available for outstanding academic performers."
+    },
+    "financialAid": {
+      "title": "Financial Aid",
+      "description": "Supporting deserving students with financial assistance programs."
+    },
+    "transportation": {
+      "title": "Transportation",
+      "description": "Safe and reliable transportation network covering the entire district."
+    }
+  }
+}

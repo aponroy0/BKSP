@@ -1,5 +1,4 @@
 import { ALUMNI } from "@/Db/alumni";
-import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 function AlumniCard({ alumni }) {
@@ -21,12 +20,12 @@ function AlumniCard({ alumni }) {
         <p className="text-gray-500 text-sm leading-relaxed grow">
           {alumni.bio}
         </p>
-        <a
+        {/* <a
           href="#"
           className="mt-5 inline-flex items-center gap-1.5 text-[#3F72AF] text-sm font-semibold hover:gap-3 transition-all"
         >
           View Profile <ArrowRight size={14} />
-        </a>
+        </a> */}
       </div>
     </div>
   );

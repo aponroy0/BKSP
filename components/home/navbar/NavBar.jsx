@@ -1,20 +1,22 @@
-// Navbar.jsx
-// Sticky navigation bar with logo, nav links with mega-dropdowns, and login buttons.
-// Desktop: hover-triggered mega dropdown panels with 3-column grid layout.
-// Mobile: tap-to-toggle accordion for dropdown items, plain link for About Us.
-
 "use client";
-import { DROPDOWN_ITEMS } from "@/lib/dropDownItems";
+
+import { useDropdownItems } from "@/lib/useDropdownItems";
 import { Lock, Menu, UserRound, X } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import DesktopNavItem from "./DesktopNavItem";
 import MobileNavItem from "./MobileNavItem";
 
-// ── Main Navbar ──────────────────────────────────────────────────────────────
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const DROPDOWN_ITEMS = useDropdownItems();
+  const t = useTranslations("nav");
+
+  const pathName = usePathname();
+  const locale = pathName.split("/")[1] || "en";
 
   useEffect(() => {
     const handleResize = () => {
@@ -29,7 +31,10 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 lg:px-8 py-3">
         <div className="flex justify-between items-center">
           {/* ── Logo ── */}
-          <Link href="/" className="flex items-center space-x-3 group shrink-0">
+          <Link
+            href={`/${locale}`}
+            className="flex items-center space-x-3 group shrink-0"
+          >
             <Image
               src="/Logo.png"
               alt="BKSB Logo"
@@ -38,7 +43,7 @@ export default function Navbar() {
               className="object-contain group-hover:scale-105 transition-transform"
             />
             <div className="flex flex-col">
-              <span className=" font-bold text-xl leading-none text-[#112D4E]">
+              <span className="font-bold text-xl leading-none text-[#112D4E]">
                 B.K.S.B
               </span>
               <span className="text-xs uppercase tracking-wider text-gray-500">
@@ -57,30 +62,29 @@ export default function Navbar() {
               />
             ))}
 
-            {/* About Us — plain link */}
             <Link
-              href="/about"
+              href={`/${locale}/about`}
               className="hover:text-[#3F72AF] transition font-medium text-sm text-[#112D4E] py-1"
             >
-              About Us
+              {t("About Us")}
             </Link>
           </div>
 
-          {/* ── Desktop: Guardian Login + Login ── */}
+          {/* ── Desktop: Guardian + Login ── */}
           <div className="hidden lg:flex items-center space-x-3">
             <a
               href={`${process.env.NEXT_PUBLIC_GUARDIAN_LOGIN_URL}`}
               className="flex items-center gap-2 border border-gray-300 hover:border-[#3F72AF] hover:text-[#3F72AF] text-[#112D4E] font-medium text-sm px-4 py-2 rounded-full transition"
             >
               <UserRound size={15} strokeWidth={2} />
-              Guardian
+              {t("Guardian")}
             </a>
             <a
               href={`${process.env.NEXT_PUBLIC_USER_LOGIN_URL}`}
               className="flex items-center gap-2 bg-[#3F72AF] hover:bg-[#112D4E] text-white font-medium text-sm px-4 py-2 rounded-full shadow-md shadow-blue-500/20 transition"
             >
               <Lock size={14} strokeWidth={2.5} />
-              Login
+              {t("Login")}
             </a>
           </div>
 
@@ -109,27 +113,27 @@ export default function Navbar() {
               />
             ))}
 
-            <a
-              href="/about"
+            <Link
+              href={`/${locale}/about`}
               className="block py-2 text-[#112D4E] hover:text-[#3F72AF] font-medium transition"
             >
-              About Us
-            </a>
+              {t("About Us")}
+            </Link>
 
             <div className="border-t border-[#DBE2EF] pt-3 mt-2 space-y-2">
               <a
-                href="/edumanager/guardian/login"
+                href={`${process.env.NEXT_PUBLIC_GUARDIAN_LOGIN_URL}`}
                 className="flex items-center gap-2 border border-gray-300 hover:border-[#3F72AF] hover:text-[#3F72AF] text-[#112D4E] font-medium text-sm px-4 py-2 rounded-full transition w-full justify-center"
               >
                 <UserRound size={15} strokeWidth={2} />
-                Guardian
+                {t("Guardian")}
               </a>
               <a
-                href="/edumanager/login"
+                href={`${process.env.NEXT_PUBLIC_USER_LOGIN_URL}`}
                 className="flex items-center gap-2 justify-center bg-[#3F72AF] hover:bg-[#112D4E] text-white font-medium text-sm px-4 py-2 rounded-full transition w-full"
               >
                 <Lock size={14} strokeWidth={2.5} />
-                Login
+                {t("Login")}
               </a>
             </div>
           </div>

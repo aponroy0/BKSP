@@ -1,14 +1,8 @@
-// Co-curricular Activities page — server component (no "use client")
-// Sections: Hero → Activity Cards → Schedule Table → Gallery → CTA → Footer
-
 import { ACTIVITIES } from "@/Db/coCurricular";
 import CommonHero from "../CommonHero";
 import ActivityCard from "./ActivityCard";
 import LifeGallery from "./LifeGallery";
 
-// ─── PAGE SECTIONS ───────────────────────────────────────────────────────────
-
-// Six activity cards in a responsive 3-col grid
 function ActivitiesGrid() {
   return (
     <section className="py-14 sm:py-20 bg-[#F9F7F7]">
@@ -23,9 +17,6 @@ function ActivitiesGrid() {
     </section>
   );
 }
-
-// ─── DEFAULT EXPORT ──────────────────────────────────────────────────────────
-// Imports Navbar and TopBar from existing components
 
 export default function CoCurricular() {
   return (

@@ -1,11 +1,14 @@
 import { getDay, getMonth } from "@/utils/formatMonthDate";
 import { Download } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function NoticeCard({ createAt, day, title }) {
+  const pathName = usePathname();
+  const locale = pathName.split("/")[1] || "en";
   return (
     <Link
-      href={`/${encodeURIComponent(title)}`}
+      href={`/${locale}/notices/${encodeURIComponent(title)}`}
       className="p-3 sm:p-4 hover:bg-[#F9F7F7] transition flex items-start gap-3 sm:gap-4 group m-2 rounded border border-[#DBE2EF] border-l-4 border-l-[#3F72AF]"
     >
       {/* Date badge */}

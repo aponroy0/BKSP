@@ -1,7 +1,6 @@
 "use client";
 
 import { FACILITIES } from "@/Db/facilities";
-import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 function FacilityCard({ facility }) {
@@ -34,12 +33,12 @@ function FacilityCard({ facility }) {
         </p>
 
         {/* View details link */}
-        <a
+        {/* <a
           href="#"
           className="mt-5 inline-flex items-center gap-1 text-[#3F72AF] text-sm font-semibold hover:gap-2 transition-all"
         >
           View Details <ArrowRight size={14} />
-        </a>
+        </a> */}
       </div>
     </div>
   );

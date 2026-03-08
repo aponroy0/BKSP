@@ -1,9 +1,6 @@
-import Home from "@/components/home/Home";
+// app/page.js
+import { redirect } from "next/navigation";
 
-export default function HomePage() {
-  return (
-    <>
-      <Home />
-    </>
-  );
+export default function RootPage() {
+  redirect("/en");
 }

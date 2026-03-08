@@ -1,5 +1,4 @@
 import {
-  BedDouble,
   BookOpen,
   FlaskConical,
   MonitorPlay,
@@ -48,16 +47,7 @@ const FACILITIES = [
     description:
       "Lush green fields and professional-grade courts for football, cricket, basketball, and various athletic activities.",
   },
-  {
-    id: 5,
-    image:
-      "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=600&q=80",
-    imageAlt: "Student hostel building",
-    Icon: BedDouble,
-    title: "Secure Hostel",
-    description:
-      "A home away from home. Safe, disciplined, and comfortable residential facilities for our outstation students.",
-  },
+
   {
     id: 6,
     image:

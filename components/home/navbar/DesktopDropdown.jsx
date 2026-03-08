@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 // ── Helper: split links into columns of max 3 items ─────────────────────────
@@ -12,6 +13,7 @@ function splitIntoColumns(links, maxPerColumn = 3) {
 // ── Desktop mega dropdown panel ──────────────────────────────────────────────
 export default function DesktopDropdown({ links, visible }) {
   const columns = splitIntoColumns(links, 3);
+  const t = useTranslations("nav");
 
   return (
     <div
@@ -37,7 +39,7 @@ export default function DesktopDropdown({ links, visible }) {
                   href={link.href}
                   className="block py-2 text-sm text-gray-600 hover:text-[#3F72AF] transition-colors font-medium whitespace-nowrap"
                 >
-                  {link.label}
+                  {t(link.label)}
                 </Link>
               ))}
             </div>

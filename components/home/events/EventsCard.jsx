@@ -2,6 +2,7 @@ import { extractImageId } from "@/utils/extractImageId";
 import { getDay, getMonth, getYear } from "@/utils/formatMonthDate";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function EventsCard({
   banner,
@@ -10,9 +11,12 @@ export default function EventsCard({
   title,
   excerpt,
 }) {
+  const pathName = usePathname();
+  const locale = pathName.split("/")[1] || "en";
+
   return (
     <Link
-      href={`/events/${encodeURIComponent(title)}`}
+      href={`/${locale}/events/${encodeURIComponent(title)}`}
       className="flex flex-col sm:flex-row gap-2 sm:gap-4 group cursor-pointer border border-gray-100 border-l-4 border-l-[#3F72AF] hover:border-gray-200 rounded-lg p-2.5 transition bg-white shadow-sm hover:shadow-md"
     >
       {/* Thumbnail */}

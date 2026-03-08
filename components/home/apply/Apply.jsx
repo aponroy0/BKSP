@@ -1,4 +1,4 @@
-// SSR page — no "use client" needed
+"use client";
 import {
   CheckCircle2,
   ClipboardCheck,
@@ -8,6 +8,7 @@ import {
   UserPlus,
 } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import ApplyHero from "./ApplyHero";
 
 const STEPS = [
@@ -78,6 +79,9 @@ function StepsSection() {
 }
 
 function ChecklistSection() {
+  const pathName = usePathname();
+  const locale = pathName.split("/")[1] || "en";
+
   return (
     <section className="py-20 bg-[#F9F7F7]">
       <div className="max-w-7xl mx-auto px-4 md:px-10">
@@ -121,7 +125,7 @@ function ChecklistSection() {
                 application today and shape a bright future.
               </p>
               <Link
-                href="/apply/form"
+                href={`/${locale}/apply/form`}
                 className="block w-full bg-[#3F72AF] hover:bg-[#2f5a8e] text-white font-bold py-3.5 rounded-xl shadow-lg transition text-sm mb-3"
               >
                 Start Application Now
